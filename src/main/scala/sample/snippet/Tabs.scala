@@ -29,18 +29,20 @@ class Tabs {
 
   def renderWithTabs(xhtml: NodeSeq): NodeSeq = {
 
-    data.flatMap(author => bind("author", chooseTemplate("authors", "template", xhtml),
-      "name" -> author.name,
-      "books" -> author.books.flatMap(book =>
-        bind("book", chooseTemplate("books", "template", xhtml),
-          "name" -> book.name,
-          "extract" -> book.paras.flatMap(para =>
-            bind("extract", chooseTemplate("extracts", "template", xhtml),
-              "text" -> para.text)
+    bind("root", xhtml, "authors" ->
+      data.flatMap(author => bind("author", chooseTemplate("authors", "template", xhtml),
+        "name" -> author.name,
+        "books" -> author.books.flatMap(book =>
+          bind("book", chooseTemplate("books", "template", xhtml),
+            "name" -> book.name,
+            "extract" -> book.paras.flatMap(para =>
+              bind("extract", chooseTemplate("extracts", "template", xhtml),
+                "text" -> para.text)
+            )
           )
         )
-      )
-    ))
+      ))
+    )
   }
 
 }
