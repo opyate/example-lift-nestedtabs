@@ -1,31 +1,83 @@
 <lift:surround with="default" at="content">
 
-<ul>
-    <lift:Tabs>
-        <li>
-            X: <a:name/>
-            <ul>
-                <a:books>
-                    <book:list>
-                        <li>
-                            X: <b:name/>
-                            <ul>
-                                <b:paras>
-                                    <para:list>
-                                        <li>
-                                            X: <p:text/>
-                                        </li>
-                                    </para:list>
-                                </b:paras>
-                            </ul>
-                        </li>
-                    </book:list>
-                </a:books>
-            </ul>
-        </li>
-    </lift:Tabs>
-</ul>
+  <span>Plain render</span>
 
+  <ul>
+      <lift:Tabs>
+          <li>
+              X: <a:name/>
+              <ul>
+                  <a:books>
+                      <book:list>
+                          <li>
+                              X: <b:name/>
+                              <ul>
+                                  <b:paras>
+                                      <para:list>
+                                          <li>
+                                              X: <p:text/>
+                                          </li>
+                                      </para:list>
+                                  </b:paras>
+                              </ul>
+                          </li>
+                      </book:list>
+                  </a:books>
+              </ul>
+          </li>
+      </lift:Tabs>
+  </ul>
+
+
+  <hr/>
+
+  <lift:Tabs.renderWithTabs>
+    <span>Tabbed render</span>
+
+    <div class="wrap">
+
+      <ul class="tabs">
+        <!--root:authors-->
+          <authors:template>
+              <li><a href="#">
+                  <author:name/>
+              </a></li>
+          </authors:template>
+        <!--/root:authors-->
+      </ul>
+
+      <!--root:authors-->
+        <authors:template>
+            <div class="pane">
+                <p>
+                    <author:name/>
+                </p>
+
+                <ul class="tabs">
+                    <author:books>
+                        <books:template>
+                        <li><a href="#">
+                            <book:name/>
+                        </a></li>
+                        </books:template>
+                    </author:books>
+                </ul>
+                <author:books>
+                    <books:template>
+                        <div class="pane">
+                          <book:extracts>
+                              <extracts:template>
+                                <extract:text/>
+                              </extracts:template>
+                          </book:extracts>
+                        </div>
+                    </books:template>
+                </author:books>
+            </div>
+        </authors:template>
+      <!--/root:authors-->
+    </div>
+  </lift:Tabs.renderWithTabs>
 
 </lift:surround>
 
