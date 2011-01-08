@@ -1,0 +1,6 @@
+Example of rendering nested tabs using Lift 2.2 and jQuery Tools 1.2.5
+as per the second example on this page: http://flowplayer.org/tools/demos/tabs/multiple-tabs.htm
+
+sbt jetty-run
+
+You can override the jettyPort (8081) in Project.scala
