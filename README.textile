@@ -17,7 +17,7 @@ val data = List(
 
 ...to look like this:
 
-!https://github.com/opyate/lift-nested-tabs-example/tree/master/src/main/webapp/images/required.png!
+!https://github.com/opyate/lift-nested-tabs-example/raw/master/src/main/webapp/images/required.png!
 
 h1. Getting started
 
