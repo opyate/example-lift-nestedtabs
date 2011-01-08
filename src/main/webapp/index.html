@@ -1,38 +1,66 @@
 <lift:surround with="default" at="content">
 
-  <span>Plain render</span>
+  <div class="wrap">
+    <ul class="tabs">
+      <li><a href="#">JK Rowling</a></li>
+      <li><a href="#">Joshua Suereth</a></li>
+    </ul>
+    <div class="pane">
+      <ul class="tabs">
+        <li><a href="#">HP &amp; Deathly Hallows</a></li>
+        <li><a href="#">HP &amp; Gobbledygook</a></li>
+      </ul>
+      <div class="pane">
+        <ul class="tabs">
+          <li><a href="#">Extract 1</a></li>
+          <li><a href="#">Extract 2</a></li>
+        </ul>
+        <div class="pane">
+          para 1
+        </div>
+        <div class="pane">
+          para 2
+        </div>
+      </div>
+      <div class="pane">
+        <ul class="tabs">
+          <li><a href="#">Extract 1</a></li>
+          <li><a href="#">Extract 2</a></li>
+        </ul>
+        <div class="pane">
+          para 3
+        </div>
+        <div class="pane">
+          para 4
+        </div>
+      </div>
+    </div>
+    <div class="pane">
+      <ul class="tabs">
+        <li><a href="#">Scala in depth</a></li>
+      </ul>
+      <div class="pane">
+        <ul class="tabs">
+          <li><a href="#">Extract 1</a></li>
+          <li><a href="#">Extract 2</a></li>
+        </ul>
+        <div class="pane">
+          para 5
+        </div>
+        <div class="pane">
+          para 6
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <ul>
-      <lift:Tabs>
-          <li>
-              X: <a:name/>
-              <ul>
-                  <a:books>
-                      <book:list>
-                          <li>
-                              X: <b:name/>
-                              <ul>
-                                  <b:paras>
-                                      <para:list>
-                                          <li>
-                                              X: <p:text/>
-                                          </li>
-                                      </para:list>
-                                  </b:paras>
-                              </ul>
-                          </li>
-                      </book:list>
-                  </a:books>
-              </ul>
-          </li>
-      </lift:Tabs>
-  </ul>
+  <hr/>
 
+  The static stuff above should be dynamically rendered from a data structure below.
 
   <hr/>
 
   <lift:Tabs.renderWithTabs>
-    <span>Tabbed render</span>
 
     <div class="wrap">
 
